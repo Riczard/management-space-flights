@@ -18,7 +18,7 @@ public class FlightService {
     @Autowired
     private TouristRepository touristRepository;
 
-    private List<Flight> getFlightsList() {
+    public List<Flight> getFlightsList() {
         return flightRepository.findAll();
     }
 
@@ -34,7 +34,7 @@ public class FlightService {
         flightRepository.delete(flight);
     }
 
-    private void addTouristToFlight(Tourist tourist, long id) {
+    public void addTouristToFlight(Tourist tourist, long id) {
         Flight flight = getFlight(id);
         flight.addTourist(tourist);
         flightRepository.save(flight);
