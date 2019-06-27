@@ -23,7 +23,7 @@ public class FlightService {
     }
 
     public Flight getFlight(long id) {
-        return flightRepository.findById(id);
+        return flightRepository.getOne(id);
     }
 
     public void addFlight(Flight flight) {
