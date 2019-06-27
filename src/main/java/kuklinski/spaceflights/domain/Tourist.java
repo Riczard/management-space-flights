@@ -35,4 +35,12 @@ public class Tourist {
     @OneToMany(mappedBy = "flight")
     @ElementCollection
     private List<Flight> listOfFlights;
+
+    public void addFlight(Flight flight) {
+        listOfFlights.add(flight);
+    }
+
+    public void removeFlight(Flight flight) {
+        listOfFlights.remove(flight);
+    }
 }
