@@ -29,4 +29,12 @@ public class Flight {
 
     @Column
     private double price;
+
+    public void addTourist(Tourist tourist) {
+        listOfTourist.add(tourist);
+    }
+
+    public void removeTourist(Tourist tourist) {
+        listOfTourist.remove(tourist);
+    }
 }
