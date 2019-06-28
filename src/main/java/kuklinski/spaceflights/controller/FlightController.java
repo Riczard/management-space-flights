@@ -39,7 +39,7 @@ public class FlightController {
     }
 
     @PostMapping("flight/{id}")
-    public void removeTouristToFlight(@Valid @RequestBody Tourist tourist, @PathVariable("id") long id) {
+    public void removeTouristFromFlight(@Valid @RequestBody Tourist tourist, @PathVariable("id") long id) {
         flightService.removeTouristFromFlight(tourist, id);
     }
 
