@@ -26,12 +26,17 @@ public class FlightService {
         return flightRepository.getOne(id);
     }
 
-    public void addFlight(Flight flight) {
-        flightRepository.save(flight);
+    public Flight addFlight(Flight flight) {
+        return flightRepository.save(flight);
     }
 
     public void removeFlight(Flight flight) {
         flightRepository.delete(flight);
+    }
+
+    public List<Flight> removeFlightByID(long id) {
+        flightRepository.deleteById(id);
+        return flightRepository.findAll();
     }
 
     public void addTouristToFlight(Tourist tourist, long id) {
