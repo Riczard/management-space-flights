@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
+@Table(name = "tourists")
 public class Tourist {
 
     @Id
@@ -32,15 +33,14 @@ public class Tourist {
     @Column
     private Date dateOfBirth;
 
-    @OneToMany(mappedBy = "flight")
-    @ElementCollection
-    private List<Flight> listOfFlights;
+    @ManyToMany(mappedBy = "tourists")
+    private List<Flight> flights;
 
     public void addFlight(Flight flight) {
-        listOfFlights.add(flight);
+        flights.add(flight);
     }
 
     public void removeFlight(Flight flight) {
-        listOfFlights.remove(flight);
+        flights.remove(flight);
     }
 }
